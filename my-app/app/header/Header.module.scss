@@ -1,0 +1,66 @@
+@keyframes cycler {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+.main {
+    >:first-child {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border: 1px solid black;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        background: whitesmoke;
+        box-shadow:
+            rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+            rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+        >:first-child {
+            border-radius: 50%;
+        }
+
+        &:hover {
+            box-shadow: none;
+            color: rgb(91, 139, 101);
+        }
+    }
+
+    >:not(:first-child) {
+        display: flex;
+        gap: 20px;
+        border: 1px solid black;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        font-weight: 600;
+
+        >:last-child {
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 1px solid black;
+
+            &:hover {
+                cursor: pointer;
+                animation: none;
+                transform: none;
+            }
+        }
+
+        :hover {
+            animation-name: cycler;
+            animation-duration: 2s;
+            transform: rotate(-15deg);
+            color: rgb(103, 139, 139);
+        }
+    }
+
+}
