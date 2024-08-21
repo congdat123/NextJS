@@ -1,8 +1,7 @@
 'use client'
 
-import classNames from 'classnames'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 import styles from './Header.module.scss'
 
