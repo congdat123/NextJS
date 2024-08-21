@@ -6,11 +6,8 @@ import React from 'react'
 
 import styles from './Header.module.scss'
 
-interface IState {
-  className: string
-}
 
-function Header(props: IState) {
+function Header() {
   const [isDarkMode, setDarkMode] = useState(false)
 
   const handleChangeMode = (): void => {
@@ -18,7 +15,7 @@ function Header(props: IState) {
     document.body.style.background = isDarkMode ? 'white' : 'darkgray'
   }
   return (
-    <main className={classNames(props.className, styles.main)}>
+    <main className={styles.main}>
       <a href='./'><Image src={'/UI Developer.gif'} alt='' width={40} height={40} />congdat.nguyen</a>
       <div>
         <a href="/about">About</a>
