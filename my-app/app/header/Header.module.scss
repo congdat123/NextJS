@@ -1,66 +1,93 @@
-@keyframes cycler {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(15deg);
-    }
-
-    100% {
-        transform: rotate(-15deg);
-    }
-}
-
 .main {
-    >:first-child {
+    // position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem 0.5rem;
+    border-bottom: 1px solid #dcdcdc;
+    user-select: none;
+
+    .header {
         display: flex;
-        align-items: center;
-        gap: 5px;
-        border: 1px solid black;
-        padding: 0.5rem 1rem;
-        border-radius: 25px;
-        background: whitesmoke;
-        box-shadow:
-            rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-            rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        align-items: inherit;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        max-width: var(--max-width);
+        width: 100%;
+        font-family: var(--font-mono);
 
-        >:first-child {
-            border-radius: 50%;
-        }
-
-        &:hover {
-            box-shadow: none;
-            color: rgb(91, 139, 101);
-        }
-    }
-
-    >:not(:first-child) {
-        display: flex;
-        gap: 20px;
-        border: 1px solid black;
-        padding: 1rem 2rem;
-        border-radius: 25px;
-        font-weight: 600;
-
-        >:last-child {
-            padding: 0.5rem 1rem;
+        .me {
+            outline: 1px solid;
             border-radius: 25px;
-            border: 1px solid black;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            gap: 5px;
+            box-shadow:
+                rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+                rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+                rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset;
 
             &:hover {
+                background-color: azure;
                 cursor: pointer;
-                animation: none;
-                transform: none;
+
+                >:nth-child(2) {
+                    color: white;
+                }
+            }
+
+            >:first-child {
+                border-radius: 50%;
             }
         }
 
-        :hover {
-            animation-name: cycler;
-            animation-duration: 2s;
-            transform: rotate(-15deg);
-            color: rgb(103, 139, 139);
+        .navigation {
+            display: flex;
+            align-items: center;
+            border-radius: 25px;
+
+            :not(:last-child) {
+                padding: 0.5rem;
+            }
+
+            :hover {
+                background-color: #f2f2f2;
+                transition: 250ms;
+                border-radius: 25px;
+            }
+
+
+            >:last-child {
+                padding: 0.5rem 1rem;
+                border: 1px solid black;
+                border-radius: 25px;
+
+                &:hover {
+                    animation-name: none;
+                    animation-duration: 0s;
+                    transform: none;
+                    cursor: pointer;
+                }
+            }
         }
     }
+}
 
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(-30deg);
+    }
 }

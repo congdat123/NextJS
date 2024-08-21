@@ -15,15 +15,20 @@ function Header() {
   }
   return (
     <main className={styles.main}>
-      <a href='./'><Image src={'/UI Developer.gif'} alt='' width={40} height={40} />congdat.nguyen</a>
-      <div>
-        <a href="/about">About</a>
-        <a href="/experience">Experience</a>
-        <a href="/contact">Contact</a>
-        <a href="/blog">Blog</a>
-        <div onClick={handleChangeMode} style={{ background: isDarkMode ? 'white' : 'darkgray' }}>Dark mode</div>
+      <div className={styles.header}>
+        <Link href='/' className={styles.me} >
+          <Image src='/UI Developer.gif' width={40} height={40} alt='' />
+          <p>cd.Nguyen</p>
+        </Link>
+        <div className={styles.navigation}>
+          <Link href='#'>About</Link>
+          <Link href='#'>Experience</Link>
+          <Link href='#'>Contact</Link>
+          <Link href='#'>Contact</Link>
+          <div style={{ background: isDarkMode ? 'white' : 'darkgray' }} onClick={handleChangeMode}>Dark mode</div>
+        </div>
       </div>
-    </main>
+    </main >
   )
 }
 
