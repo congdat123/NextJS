@@ -22,10 +22,10 @@ function Header() {
           <p>cd.Nguyen</p>
         </Link>
         <div className={styles.navigation}>
-          <Link href='#'>About</Link>
-          <Link href='#'>Experience</Link>
-          <Link href='#'>Contact</Link>
-          <Link href='#'>Contact</Link>
+          <Link href='/about'>About</Link>
+          <Link href='/Experience'>Experience</Link>
+          <Link href='/contact'>Contact</Link>
+          <Link href='/blog'>Blog</Link>
           <div style={{ background: isDarkMode ? 'white' : 'darkgray' }} onClick={handleChangeMode}>Dark mode</div>
         </div>
       </div>
