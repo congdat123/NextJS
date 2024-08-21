@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "./header/Header";
 import { useState } from "react";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
   }
   return (
     <main className={styles.main} style={{ background: color }}>
-      <Header darkMode={color === 'darkgray'} className={styles.description} handleChangeMode={handleChangeMode} />
 
       <div className={styles.center}>
         <Image
