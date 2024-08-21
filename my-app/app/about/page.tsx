@@ -1,9 +1,19 @@
-import React from 'react'
 
-function page() {
+import { getAllPersons } from '@/services/persons'
+import React, { useState } from 'react'
+
+async function page({
+  params
+}: { params: { user: string } }): Promise<JSX.Element> {
+  const rows = await getAllPersons()
+  console.log(rows)
   return (
     <div>
-      About
+      {!!rows?.length && rows.map((row) => (
+        <div key={row.id}>
+          {row.id} - {row.name}
+        </div>
+      ))}
     </div>
   )
 }

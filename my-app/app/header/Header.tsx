@@ -23,7 +23,7 @@ function Header() {
         </Link>
         <div className={styles.navigation}>
           <Link href='/about'>About</Link>
-          <Link href='/Experience'>Experience</Link>
+          <Link href='/experience'>Experience</Link>
           <Link href='/contact'>Contact</Link>
           <Link href='/blog'>Blog</Link>
           <div style={{ background: isDarkMode ? 'white' : 'darkgray' }} onClick={handleChangeMode}>Dark mode</div>
