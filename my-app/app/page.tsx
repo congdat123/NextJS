@@ -5,12 +5,8 @@ import styles from "./page.module.css";
 import { useState } from "react";
 
 export default function Home() {
-  const [color, setColor] = useState('none')
-  const handleChangeMode = (): void => {
-    setColor(color === 'none' ? 'darkgray' : 'none')
-  }
   return (
-    <main className={styles.main} style={{ background: color }}>
+    <main className={styles.main} >
 
       <div className={styles.center}>
         <Image

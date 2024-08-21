@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 import styles from './Header.module.scss'
+import Search from '../search/Search'
 
 
 function Header() {
@@ -22,6 +23,7 @@ function Header() {
           <p>cd.Nguyen</p>
         </Link>
         <div className={styles.navigation}>
+          <Search />
           <Link href='/about'>About</Link>
           <Link href='/experience'>Experience</Link>
           <Link href='/contact'>Contact</Link>

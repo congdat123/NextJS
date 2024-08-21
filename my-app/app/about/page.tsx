@@ -1,12 +1,12 @@
 
-import { getAllPersons } from '@/services/persons'
+import { PersonServices } from '@/services/persons'
 import React, { useState } from 'react'
 
 async function page({
   params
 }: { params: { user: string } }): Promise<JSX.Element> {
-  const rows = await getAllPersons()
-  console.log(rows)
+  const services = new PersonServices();
+  const rows = await services.getAllPersons()
   return (
     <div>
       {!!rows?.length && rows.map((row) => (
