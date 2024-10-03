@@ -8,8 +8,8 @@ export class PersonServices {
     // getAllPersons = async (): Promise<Persons[] | undefined> => {
     //     return await db.selectFrom('about').selectAll().execute() as Persons[]
     // }
-    getPersonsByName = async (name: string): Promise<any[]> => {
+    getPersonsByName = (name: string): Promise<any[]> => {
         // console.log(context.getUri())
-        return (await context.get(`/api/person/Alden`)).data
+        return context.get(`/api/person/${name}`).then(res => res.data)
     }
 }

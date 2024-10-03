@@ -1,0 +1,45 @@
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.sentence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.word {
+  font-size: 1.2em;
+  margin: 5px;
+}
+
+.blankInput {
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 1.2em;
+
+  &:focus {
+    outline: none;
+  }
+  // padding: 5px;
+  // margin: 5px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #45a049;
+  }
+
+}
