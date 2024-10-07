@@ -24,7 +24,6 @@ function ExerCise() {
   const [result, setResult] = useState<number>()
 
   const onChange = (value: string, idx: number): void => {
-    console.log(answers)
     const answer = answers[pageNum]
     if (answer.input.some(v => v.index === idx)) {
       const values = answer.input.map(v => {
@@ -86,7 +85,6 @@ function ExerCise() {
     setCheck(checkRes)
     setResult(checkRes.filter(v => v).length)
   }
-  console.log(check)
 
   useEffect(() => {
     EasySpeech.detect()
@@ -104,7 +102,6 @@ function ExerCise() {
             {examples[pageNum].words.split(' ').map((v, idx) => {
               if (examples[pageNum].hide.includes(v)) {
                 const value = answers[pageNum].input.filter((v) => v.index === idx)[0]?.word || ''
-                console.log(value)
                 return <input
                   key={idx}
                   className={style.blankInput}
@@ -147,7 +144,7 @@ function ExerCise() {
                 width: 35,
                 height: 35
               }}
-              color={check[idx] ? 'success' : 'error'}
+              color={check[idx] !== undefined ? check[idx] ? 'success' : 'error' : 'primary'}
             >
               {idx + 1}
             </Button>
